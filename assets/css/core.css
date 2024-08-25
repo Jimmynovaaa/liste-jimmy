@@ -1,40 +1,27 @@
 .tab {
     overflow: hidden;
-    background-color: var(--background);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 20px;
+    border: 1px solid #cccccc;
+    background-color: #f1f1f1;
 }
 
 .tab button {
-    flex: 1;
-    background-color: transparent;
-    color: var(--header-link);
+    background-color: inherit;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 12px 12px;
+    transition: 0.3s;
     font-size: 0.75em;
 }
 
-.tab button.active {
-  color: var(--link);
-  text-decoration: underline;
-}
-
 .tab button:hover {
-  color: var(--link);
+    background-color: #cccccc;
 }
 
 .tabContent {
     display: none;
     animation: fadeEffect 320ms;
     border-top: none;
-}
-
-header.site-header > nav > ul > li:not(.separator) > a.active {
-  color: var(--link);
-  text-decoration: underline;
 }
 
 @keyframes fadeEffect {
@@ -50,10 +37,9 @@ header.site-header > nav > ul > li:not(.separator) > a.active {
 .search {
     width: 100%;
     font-size: 16px;
-    padding: 12px 20px;
-    border: 1px solid var(--border);
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #dddddd;
     margin-bottom: 12px;
-    background-color: var(--background);
 }
 
 table {
@@ -85,13 +71,13 @@ td.description {
 span.eventRedirect {
   cursor: pointer;
   text-decoration: underline;
-  color: var(--link);
+  color:#22527b;;
 }
 span.metadata {
     font-size: 0.8em;
     padding: 0px;
     font-style: italic;
-    color: var(--meta);
+    color: #5a5454;
 }
 
 @media screen and (max-width: break) {
@@ -108,6 +94,7 @@ span.metadata {
     font-size: 0.8em;
     padding: 0px;
     font-style: italic;
+    color: #5a5454;
   }
 }
 
@@ -124,5 +111,6 @@ span.metadata {
   span.metadata {
     font-size: 0.85em;
     font-style: italic;
+    color: #5a5454;
   }
 }

@@ -4,10 +4,7 @@ layout: page
 permalink: /info
 ---
 
-<link rel="stylesheet" href="{{- 'assets/css/core.css' | relative_url -}} "/>
-<script src="{{- 'assets/js/core.js' | relative_url -}}"></script>
-
-{%- assign utils = true -%}
+{%- assign utils = false -%}
 {%- assign lootboxes = false -%}
 {%- assign puppeteer = false -%}
 {%- for mod in site.data.modlist -%}
@@ -38,26 +35,34 @@ permalink: /info
     {%- endif -%}
 {%- endfor -%}
 
-# Bienvenue !
-Bienvenue sur le shop rimworld de [{{ site.data.social.twitch }}](https://twitch.tv/{{ site.data.social.twitch }}).
-On utilise le mod
-[Twitch Toolkit](https://steamcommunity.com/sharedfiles/filedetails/?id=1718525787) pour t'offrir de l'interactivité avec la partie en cours. Il y a beaucoup de choses et tu sera peut-être perdu au début mais ce guide est là pour poser les bases.
+# Welcome
 
-## Twitch Toolkit c'est quoi ?
+Welcome to [{{ site.data.social.twitch }}](https://twitch.tv/{{ site.data.social.twitch }})'s stream.
+This stream uses the mod
+[Twitch Toolkit](https://steamcommunity.com/sharedfiles/filedetails/?id=1718525787) to provide an
+interactive experience. There's a lot to the mod that may seem complicated to even more experienced
+users, but this short guide will help you get the hang of things.
 
-Twitch Toolkit est un mod par hodlhodl (et repris par Nry, Sirrandoo et d'autres)  qui permet aux viewers d'avoir un impact sur la partie. La première façon c'est via le [store]({{- "/" | relative_url -}}), qui te permet d'acheter des objets/events parmis ceux que j'ai sélectionné. Les sondages sont une autre façon d'interagir, ils tombent réguliérement et proposent plusieurs issues aux viewers qui votent dans le chat.
+## What is Twitch Toolkit?
 
-## Les pièces
+Twitch Toolkit is a mod by hodlhodl that allows viewers to affect the game in a number of ways. The
+most prominent is its [store]({{- "/" | relative_url -}}), which allows you to purchase a number of
+things the streamer curated. Depending on the purchase, these things appear in-game or affect the
+game in some way. Another way viewers can interact with the game is through the mod's polls. The
+choices in these polls depend heavily on what's enabled in the mod.
 
-C'est la monnaie du mod. Tu peux voir combien tu en possèdes avec la commande `{{ bal }}`. 
+## What Are Coins?
+
+Coins are the mod's currency. You can view your balance by using the `{{ bal }}` command. 
 
 {% if utils == true %}
-Cette commande utilise des emojis pour réduire la taille des messages. Voici leur signification :
+You'll notice the balance command may have some new emojis. If that's the case, here is an overview
+of the emojis as follows:
 
-- 💰 représente la quantité de pièces que tu possèdes.
-- ⚖ représente ton karma.
-- 📈 représente la quantité de pièces que tu touches chaque cycle.
-- 📉 représente la quantité de pièces que tu perds chaque cycle.
+- 💰 represents the amount of coins you current have.
+- ⚖ represents your current karma.
+- 📈 represents the amount of coins you gain everytime the mod awards coins.
+- 📉 represents the amount of coins you lose everytime to mod awards coins.
 
 {% endif %}
 
@@ -70,18 +75,30 @@ You'll always get a new lootbox everyday.
 
 
 <br/>
-## Le Karma c'est quoi ?
+## What is Karma?
 
-Le Karma est un système au sein du mod qui permet de limiter la quantité d'event négatifs que pourrait envoyer un viewer. Il modifie simplement la quantité de pièces que vous recevrez chaque cycle. Au plus votre karma est bas, au moins vous toucherez de pièces. L'idée étant de laisser le temps à la colonie de se remettre des événements négatifs.
+Karma is a system in the mod that tries to limit the amount of negative events a viewer can purchase at
+one time. This system works by directly modifying that amount of coins viewers get everytime the mod
+awards coins. This means that the lower you karma is, the lower your coin gain is. The hope is that
+negative events get spread out more so the colony can recover.
 
-## Comment utiliser le toolkit ?
+## How Do I Use Twitch Toolkit?
 
-Vous pouvez utiliser le toolkit de plusieurs façon -- l'essentiel passe par les 
-[commands]({{- "/commands" | relative_url -}}). La commande la plus importante est la commande `{{- buy -}}`
-, c'est grâce à elle que vous pourrez acheter des items/events. Une autre commande importante est la commande `!mypawn`, qui vous permet de consulter les informations de votre colon. Le reste des commandes se comprend assez facilement et/ou est expliqué sur la page [commands]({{- "/commands" | relative_url -}}) .
+You can use Twitch Toolkit in a number of ways -- the most prominent way is through its
+[commands]({{- "/commands" | relative_url -}}). The more important command is the `{{- buy -}}`
+command, which is the mods entry point into purchasing things from the store. Other notable commands
+are the `!mypawn` commands, which allow you see various information about your pawn. We won't cover
+every command here, but most commands should generally be self-descriptive or have a description of
+what they do on the [commands]({{- "/commands" | relative_url -}}) page.
 
-## Les armes et recherche 
-**Petite Armurerie :** Carabine de Survie - Revolver - Fusil à Pompe  
-**Patite Artillerie Auto :** Desert Eagle - Glock 17 - AK74U - Pistolet Mitrailleur - Pistolet Mitrailleur Lourd  
-**Artillerie Auto Perfectionnée :** AA-12 - FN MAG - Fusil à pompe auto - M249 - MAC10 - Mitrailleuse - Uzi - UMP45  
-**Armes de Précision :** Fusil d'Assault - Fusil de Précision - FAMAS F1 - AK47 - Dragunov - Gol Magnum - M24  
+
+{%- if puppeteer -%}
+<br/>
+## What is Puppeteer?
+
+[Puppeteer](https://steamcommunity.com/sharedfiles/filedetails/?id=2057192142) is a mod by Brrainz that
+allows viewers to directly control their pawns, and even view a number of information about your pawn in
+a graphical way. It also redirects some of the responses from Twitch Toolkit to its website to clean up
+chat a bit. So, if you're logged into Puppeeter and you're wondering why the bot isn't responding to you,
+you should check the `TT` tab on the website first.
+{%- endif -%}
